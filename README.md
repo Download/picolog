@@ -132,7 +132,7 @@ if (log.level() <= log.INFO) {
 ```
 
 ## Copyright
-Copyright 2015 by Stijn de Witt. Some rights reserved.
+Copyright 2015 by [Stijn de Witt](http://StijnDeWitt.com). Some rights reserved.
 
 ## License
 Licensed under the [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/) Open Source license.
