@@ -1,0 +1,49 @@
+{
+  "name": "picolog",
+  "version": "0.1.0",
+  "description": "Tiny logging helper for use in the browser",
+  "src": "src/picolog.js",
+  "main": "dist/picolog.umd.js",
+  "dist": {
+    "umd": "dist/picolog.umd.js",
+    "min": "dist/picolog.min.js",
+    "map": "dist/picolog.min.js.map"
+  },
+  "exports": [
+    "log"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/download/picolog.git"
+  },
+  "keywords": [
+    "javascript",
+    "logging",
+    "browser"
+  ],
+  "author": {
+    "name": "Stijn de Witt",
+    "email": "StijnDeWitt@hotmail.com",
+    "url": "http://StijnDeWitt.com"
+  },
+  "contributors": [],
+  "copyright": "Copyright 2015 by [Stijn de Witt](http://StijnDeWitt.com). Some rights reserved.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "bugs": {
+    "url": "https://github.com/download/picolog/issues"
+  },
+  "homepage": "http://download.github.io/picolog",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-jsdoc": "~0.6.7",
+    "grunt-umd": "^2.3.3",
+    "load-grunt-tasks": "~1.0.0"
+  },
+  "dependencies": {}
+}

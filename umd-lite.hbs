@@ -1,0 +1,12 @@
+(function (u, m, d) {
+	if (typeof define == 'function') {define(m, [{{{amdDependencies.wrapped}}}], function ({{{amdDependencies.params}}}) {return ({{#if globalAlias}}u['{{{globalAlias}}}'] = {{/if}}d({{{amdDependencies.params}}}));});}
+	else if (typeof exports == 'object') {module.exports = d({{{cjsDependencies.wrapped}}});} 
+	else { {{#if globalAlias}}u['{{{globalAlias}}}'] = {{else}}{{#if objectToExport}}u['{{{objectToExport}}}'] = {{/if}}{{/if}}d({{{globalDependencies.normal}}});
+  }
+}(this, '{{amdModuleId}}', function ({{dependencies}}) {
+
+{{{code}}}
+{{#if objectToExport}}
+return {{{objectToExport}}};
+{{/if}}
+}));

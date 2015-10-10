@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>picolog tests</title>
+	<script src="http://code.jquery.com/qunit/qunit-1.14.0.js"></script>
+	<script src="../dist/picolog.umd.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.14.0.css">
+</head>
+<body>
+	<a href="index.html">Restart</a> | <a href="test-amd.html">Next Test</a>
+	<h1>picolog tests - browser</h1>
+	<a href="test.js">view test code</a>
+	<script>
+	/*
+		// STUB OUT CONSOLE METHODS FOR TESTING PURPOSES
+		function createStub(org) {
+			function logStub() {
+				org.apply(this, arguments);
+				logStub.messages.push(arguments);
+			}
+			logStub.messages = [];
+			return logStub;
+		}
+		console.log = createStub(console.log);
+		console.info = createStub(console.info);
+		console.warn = createStub(console.warn);
+		console.error = createStub(console.error);
+	*/
+	</script>
+	<script src="test.js"></script>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+</body>
+</html>
