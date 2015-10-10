@@ -1,7 +1,7 @@
 # picolog <sub><sup>v0.2.0</sup></sub>
 **Tiny logging helper for use in the browser**
 
-![logo](picolog.png)
+![logo](https://cdn.rawgit.com/download/picolog/0.2.0/picolog.png)
 
 ## Yet another logging library?
 No. Picolog is much less than that. 
@@ -101,22 +101,22 @@ By default, the log level is set to `log.INFO`.
 
 To change the log level on the page we are looking at we can do
 two things:
-1. Open the console and manually set the log level from there
-2. Add a parameter to the url of the page we want to inspect
+ 1. Open the console and manually set the log level from there
+ 2. Add a parameter to the url of the page we want to inspect
 
 Method 2 will make sure your set level is in effect right from
-the first load of picolog. Method 1 will take effect from the
-moment the statement is executed.
+the first load of picolog. 
+Method 1 will take effect from the moment the statement is executed.
 
 To set the different levels from a URL parameter for page
-`http://www.example.com/my/page.html`
+ * `http://www.example.com/my/page.html`
 
 we would add URL parameters like this:
-`http://www.example.com/my/page.html?log=debug`
-`http://www.example.com/my/page.html?log=info`
-`http://www.example.com/my/page.html?log=warn`
-`http://www.example.com/my/page.html?log=error`
-`http://www.example.com/my/page.html?log=none`
+ * `http://www.example.com/my/page.html?log=debug`
+ * `http://www.example.com/my/page.html?log=info`
+ * `http://www.example.com/my/page.html?log=warn`
+ * `http://www.example.com/my/page.html?log=error`
+ * `http://www.example.com/my/page.html?log=none`
 
 ## Performance considerations
 Any logging methods on the console returned by `log()` that correspond to a log level which is 
