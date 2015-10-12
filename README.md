@@ -1,7 +1,7 @@
 # picolog <sub><sup>v0.3.0</sup></sub>
 **Tiny logging helper for use in the browser**
 
-![logo](https://cdn.rawgit.com/download/picolog/0.3.0/picolog.png)
+![logo](https://cdn.rawgit.com/Download/picolog/0.3.0/picolog.png)
 
 ## Yet another logging library?
 No. Picolog is much less than that. 
