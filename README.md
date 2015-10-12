@@ -4,13 +4,13 @@
 ![logo](https://cdn.rawgit.com/Download/picolog/0.3.0/picolog.png)
 
 ## Yet another logging library?
-No. Picolog is much less than that. 
+**No. Picolog is much less than that.**
 
 All Picolog is, is a tiny shim that lets you safely log to the console
 without having to worry about environments where no `console` object is
 available. It just adds one feature: logging levels. 
 
-Because it uses native logging under the hood and weighs in at **less than 1 kB** minified
+Because it uses native logging under the hood and weighs in at **just 745 bytes** minified
 and gzipped, it allows you to keep your logging statements around in your production builds 
 without having to worry about size/performance or polluting the user's log with too many messages.
 
