@@ -1,7 +1,7 @@
-# picolog <sub><sup>v0.2.0</sup></sub>
+# picolog <sub><sup>v0.3.0</sup></sub>
 **Tiny logging helper for use in the browser**
 
-![logo](https://cdn.rawgit.com/download/picolog/0.2.0/picolog.png)
+![logo](https://cdn.rawgit.com/download/picolog/0.3.0/picolog.png)
 
 ## Yet another logging library?
 No. Picolog is much less than that. 
@@ -15,9 +15,16 @@ and gzipped, it allows you to keep your logging statements around in your produc
 without having to worry about size/performance or polluting the user's log with too many messages.
 
 ## Download
-* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.2.0/dist/picolog.umd.js) (~2kB, source)
-* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.2.0/dist/picolog.min.js) (~1kB, minified)
-* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.2.0/dist/picolog.min.js.map) (~2kB, debug map file)
+* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.3.0/dist/picolog.umd.js) (~2kB, source)
+* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.3.0/dist/picolog.min.js) (~1kB, minified)
+* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.3.0/dist/picolog.min.js.map) (~2kB, debug map file)
+
+## Install
+If you are using NPM, you can install picolog with this command:
+```sh
+npm install --save picolog
+```
+By adding `--save`, we instruct NPM to add a dependency on the latest version of picolog to your package.json file.
 
 ## Include on your page
 `picolog` can be used directly from CDN, from a local script file, or from a module loader.
@@ -25,7 +32,7 @@ without having to worry about size/performance or polluting the user's log with 
 ### CDN
 This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.
 ```xml
-<script src="https://cdn.rawgit.com/download/picolog/0.2.0/dist/picolog.min.js"></script>
+<script src="https://cdn.rawgit.com/download/picolog/0.3.0/dist/picolog.min.js"></script>
 ```
 
 ### Local script file
@@ -41,93 +48,89 @@ from Node modules as well as via an AMD loader such as RequireJS.
 #### Node 
 ```js
 var log = require('picolog');
-// here, the log function is available
-log().info('Picolog is loaded');
+log.info('Picolog is loaded');
 ```
 
 #### AMD
 ```js
 define(['picolog'], function(log){
-	// here, the log function is available
-	log().info('Picolog is loaded');
+	log.info('Picolog is loaded');
 });
 ```
 To be able to load Picolog from CDN as an AMD module, configure the CDN url like so <small>(note the absence of `.js` in the url)</small>:
 ```js
 require.config({
 	paths: {
-		'picolog': 'https://cdn.rawgit.com/download/picolog/0.2.0/dist/picolog.min'
+		'picolog': 'https://cdn.rawgit.com/download/picolog/0.3.0/dist/picolog.min'
 	}
 });
 ```
 
 ## Logging messages
-Picolog defines 4 logging methods, which correspond with available log levels:
+Picolog defines 5 logging methods, which correspond with available log levels:
 ```js
-log().log('This logs a debug message');
-log().info('This logs an info message');
-log().warn('This logs a warning message');
-log().error('This logs an error message');
+log.trace('This logs a TRACE message');
+log.debug('This logs a DEBUG message');
+log.info('This logs an INFO message');
+log.warn('This logs a WARN message');
+log.error('This logs an ERROR message');
 ```
-Notice how we call `log()` as a function. This will return the actual `console` object if it 
-exists in this environment, or a no-op object if it does not. The advantage of this is that the
-line numbers seen next to each logging statement in the console will be the actual line numbers
-of *your* line of code doing the logging and not of some wrapping function inside picolog.
+Picolog does **not** mess with your stacktrace or line numbers. Line numbers shown in the console 
+will be from your code, not from some wrapper function..
 
 ## Logging levels
-Picolog defines 4 logging levels, which correspond with the available logging methods:
+Picolog defines 5 logging levels, which correspond with the available logging methods:
 ```js
-log.DEBUG; // 0
-log.INFO; // 1
-log.WARN; // 2
-log.ERROR; // 3
+log.TRACE; // 1
+log.DEBUG; // 2
+log.INFO; // 3
+log.WARN; // 4
+log.ERROR; // 5
 ```
-In addition, there is a fifth level that completely disables all logging:
+In addition, there is a 6th level that completely disables all logging:
 ```js
-log.NONE; // 4
+log.NONE; // 9
 ```
-To get or set the log level, we use the `log.level` function:
+To get or set the log level, we use the `log.level` property:
 ```js
-if (log.level() <= log.INFO) {
-	log().info('This message will be logged');
+if (log.level <= log.INFO) {
+	log.info('This message will be logged');
 }
-log.level(log.WARN);
-log().info('This info message will NOT be logged.');
-log().warn('This warning message WILL be logged.');
-log.level(log.NONE);
-log().error('Logging is completely disabled.');
+log.level = log.WARN;
+log.info('This info message will NOT be logged.');
+log.warn('This warning message WILL be logged.');
+log.level = log.NONE;
+log.error('Logging is completely disabled.');
 ```
-By default, the log level is set to `log.INFO`.
+By default, the log level is set to `log.WARN` so under normal conditions there will be no logging.
 
 To change the log level on the page we are looking at we can do
 two things:
  1. Open the console and manually set the log level from there
  2. Add a parameter to the url of the page we want to inspect
 
-Method 2 will make sure your set level is in effect right from
-the first load of picolog. 
-Method 1 will take effect from the moment the statement is executed.
+When we set the log level in the console, new messages logged
+at or above that level will start to appear, but we will not see
+the messages that were logged before that moment. To make sure
+we see our log messages from the very first moment the page is
+loaded, we can set the log level as a querystring parameter
+named `log`, like this:
 
-To set the different levels from a URL parameter for page
- * `http://www.example.com/my/page.html`
+`http://www.example.com/?`**`log=debug`**
 
-we would add URL parameters like this:
- * `http://www.example.com/my/page.html?log=debug`
- * `http://www.example.com/my/page.html?log=info`
- * `http://www.example.com/my/page.html?log=warn`
- * `http://www.example.com/my/page.html?log=error`
- * `http://www.example.com/my/page.html?log=none`
+Both the uppercase and lowercase names of the log levels work,
+as well as their numerical value.
 
 ## Performance considerations
-Any logging methods on the console returned by `log()` that correspond to a log level which is 
-lower than the currently set level, are replaced by no-op methods. As such, you generally don't
-have to worry about the performance overhead of leaving the log statements in the production 
-code. There is one exception to this rule though. If preparing the message itself is a costly
-operation, you may want to surround the log code with an `if (log.level <= myLevel)` statement:
+The logging methods on the `log` object that correspond to a log level which is lower than the 
+currently set level, are replaced by no-op methods. As such, you generally don't have to worry 
+about the performance overhead of leaving the log statements in the production code. There is 
+one exception to this rule though. If preparing the message itself is a costly operation, you 
+may want to surround the log code with an `if (log.level <= myLevel)` statement:
 ```js
-if (log.level() <= log.INFO) {
+if (log.level <= log.INFO) {
 	var message = doLotsOfWorkToGenerateLogMessage();
-	log().info(message);
+	log.info(message);
 }
 ```
 

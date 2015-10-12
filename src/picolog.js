@@ -1,36 +1,40 @@
-function log() {return con;}
+var log = {TRACE:1, DEBUG:2, INFO:3, WARN:4, ERROR:5, NONE:9},
+	level = query(window.location.search.substring(1), log.WARN),
+	fns = (function(){
+		var ks = Object.keys(log); 
+		return ks.slice(0, ks.length - 1).map(function(x){return x.toLowerCase();});
+	})();
 
-log.level = function log_level(lvl) {
-	if ((lvl !== undefined) && (lvl >= 0) && (lvl <= 4) && (lvl !== level)) {
-		level = lvl;
-		for (i=0; x=methods[i]; i++) {
-			con[x] = i >= lvl ? org[x] : nul[x];
-		}
+Object.defineProperty(log, 'level', {
+	get: function(){return level;},
+	set: function(lvl) {if (lvl >= 0 && lvl <= 4) {patch(level = lvl);}}
+});
+
+patch(level);
+
+function patch(lvl) {
+	for (var i=0,name; name=fns[i]; i++) {
+		log[name] = i+1 < lvl ? noop : logger(name, lvl);
 	}
-	return level;
-};
-
-log.DEBUG = 0;
-log.INFO = 1;
-log.WARN = 2;
-log.ERROR = 3;
-log.NONE = 4;
-
-var con = (typeof console == 'object') && console.error ? console : {},
-	methods = ['log','info','warn','error'],
-	query = window.location.search.substring(1),
-	search = /([^&=]+)=?([^&]*)/g, 
-	nul = {}, org = {}, level, query, match, i, x;
-
-for (i=0; x=methods[i]; i++) {
-	nul[x] = function(){};
-	org[x] = con[x] || nul[x];
 }
-x = log.INFO;
-while (match = search.exec(query)){
-	if (match[1] == 'log') {
-		x = log[match[2].toUpperCase()] || Number(match[2]); 
-		break;
-	} 
+
+function logger(name, lvl) {
+	if (typeof console == 'undefined') {
+		return function() {
+			if (typeof console != 'undefined') {
+				patch(lvl);
+				log[name].apply(log, arguments);
+			}
+		};
+	}
+	return console[name] ? console[name].bind(console) : console.log ? console.log.bind(console) : noop;
 }
-log.level(x);
+
+function query(qs, def) {
+	for (var m; m = /([^&=]+)=?([^&]*)/g.exec(qs); ) {
+		if (m[1] == 'log') {return log[m[2].toUpperCase()] || Number(m[2]) || def;} 
+	}
+	return def;
+}
+
+function noop(){}
