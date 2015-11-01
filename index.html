@@ -32,12 +32,12 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="picolog-v050" class="anchor" href="#picolog-v050" aria-hidden="true"><span class="octicon octicon-link"></span></a>picolog <sub><sup>v0.5.0</sup></sub>
+<a id="picolog-v060" class="anchor" href="#picolog-v060" aria-hidden="true"><span class="octicon octicon-link"></span></a>picolog <sub><sup>v0.6.0</sup></sub>
 </h1>
 
 <p><strong>Tiny logging helper for use in the browser</strong></p>
 
-<p><img src="https://cdn.rawgit.com/download/picolog/0.5.0/picolog.png" alt="logo"></p>
+<p><img src="https://cdn.rawgit.com/download/picolog/0.6.0/picolog.png" alt="logo"></p>
 
 <h2>
 <a id="yet-another-logging-library" class="anchor" href="#yet-another-logging-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet another logging library?</h2>
@@ -48,8 +48,8 @@
 without having to worry about environments where no <code>console</code> object is
 available. It just adds one feature: logging levels. </p>
 
-<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.umd.js">49 lines of code</a> 
-weigh in at <strong>just 826 bytes</strong> minified and gzipped, it allows you to keep your logging statements 
+<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js">49 lines of code</a> 
+weigh in at <strong>just 837 bytes</strong> minified and gzipped, it allows you to keep your logging statements 
 around in your production builds without having to worry about size/performance or polluting the 
 user's log with too many messages.</p>
 
@@ -58,11 +58,11 @@ user's log with too many messages.</p>
 
 <ul>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
 </ul>
 
 <h2>
@@ -84,7 +84,7 @@ user's log with too many messages.</p>
 
 <p>This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.</p>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h3>
 <a id="local-script-file" class="anchor" href="#local-script-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local script file</h3>
@@ -116,12 +116,12 @@ log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</s
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c1">require</span>.config({
     paths<span class="pl-k">:</span> {
-        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min<span class="pl-pds">'</span></span>
+        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min<span class="pl-pds">'</span></span>
     }
 });</pre></div>
 
 <h2>
-<a id="logging-messages" class="anchor" href="#logging-messages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging messages</h2>
+<a id="logging-methods" class="anchor" href="#logging-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging methods</h2>
 
 <p>Picolog defines 5 logging methods, which correspond with available log levels:</p>
 
@@ -167,7 +167,7 @@ two things:</p>
 
 <ol>
 <li>Open the console and manually set the log level from there</li>
-<li>Add a parameter to the url of the page we want to inspect</li>
+<li>Add a parameter to the url of the page we want to inspect (browsers only)</li>
 </ol>
 
 <p>When we set the log level in the console, new messages logged
