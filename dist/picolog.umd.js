@@ -5,7 +5,7 @@
 }(this, 'log', function() {
 
 var log = {TRACE:1, DEBUG:2, INFO:3, WARN:4, ERROR:5, NONE:9},
-	level = query(window.location.search.substring(1), log.WARN),
+	level = typeof window == 'object' ? query(window.location.search.substring(1), log.WARN) : log.WARN,
 	fns = (function(){
 		var ks = Object.keys(log); 
 		return ks.slice(0, ks.length - 1).map(function(x){return x.toLowerCase();});

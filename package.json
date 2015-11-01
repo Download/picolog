@@ -1,6 +1,6 @@
 {
   "name": "picolog",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Tiny logging helper for use in the browser",
   "src": "src/picolog.js",
   "main": "dist/picolog.umd.js",
