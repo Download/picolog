@@ -1,7 +1,7 @@
-# picolog <sub><sup>v0.5.0</sup></sub>
+# picolog <sub><sup>v0.6.0</sup></sub>
 **Tiny logging helper for use in the browser**
 
-![logo](https://cdn.rawgit.com/download/picolog/0.5.0/picolog.png)
+![logo](https://cdn.rawgit.com/download/picolog/0.6.0/picolog.png)
 
 ## Yet another logging library?
 **No. Picolog is much less than that.**
@@ -10,15 +10,15 @@ All Picolog is, is a tiny shim that lets you safely log to the console
 without having to worry about environments where no `console` object is
 available. It just adds one feature: logging levels. 
 
-Because it uses native logging under the hood and it's [49 lines of code](https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.umd.js) 
-weigh in at **just 826 bytes** minified and gzipped, it allows you to keep your logging statements 
+Because it uses native logging under the hood and it's [49 lines of code](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js) 
+weigh in at **just 837 bytes** minified and gzipped, it allows you to keep your logging statements 
 around in your production builds without having to worry about size/performance or polluting the 
 user's log with too many messages.
 
 ## Download
-* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.umd.js) (~2kB, source)
-* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js) (~1kB, minified)
-* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js.map) (~2kB, debug map file)
+* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js) (~2kB, source)
+* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js) (~1kB, minified)
+* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js.map) (~2kB, debug map file)
 
 ## Install
 If you are using NPM, you can install picolog with this command:
@@ -33,7 +33,7 @@ By adding `--save`, we instruct NPM to add a dependency on the latest version of
 ### CDN
 This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.
 ```xml
-<script src="https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min.js"></script>
+<script src="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js"></script>
 ```
 
 ### Local script file
@@ -62,12 +62,12 @@ To be able to load Picolog from CDN as an AMD module, configure the CDN url like
 ```js
 require.config({
 	paths: {
-		'picolog': 'https://cdn.rawgit.com/download/picolog/0.5.0/dist/picolog.min'
+		'picolog': 'https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min'
 	}
 });
 ```
 
-## Logging messages
+## Logging methods
 Picolog defines 5 logging methods, which correspond with available log levels:
 ```js
 log.trace('This logs a TRACE message');
@@ -108,7 +108,7 @@ By default, the log level is set to `log.WARN` so under normal conditions there 
 To change the log level on the page we are looking at we can do
 two things:
  1. Open the console and manually set the log level from there
- 2. Add a parameter to the url of the page we want to inspect
+ 2. Add a parameter to the url of the page we want to inspect (browsers only)
 
 When we set the log level in the console, new messages logged
 at or above that level will start to appear, but we will not see

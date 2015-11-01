@@ -5,7 +5,7 @@
 }(this, 'log', function() {
 
 var log = {TRACE:1, DEBUG:2, INFO:3, WARN:4, ERROR:5, NONE:9},
-	level = typeof window == 'object' ? query(window.location.search.substring(1), log.WARN) : log.WARN,
+	level = query(typeof window == 'object' && window.location.search.substring(1), log.WARN),
 	fns = (function(){
 		var ks = Object.keys(log); 
 		return ks.slice(0, ks.length - 1).map(function(x){return x.toLowerCase();});
@@ -37,7 +37,7 @@ function logger(name, lvl) {
 }
 
 function query(qs, def) {
-	for (var m; m = /([^&=]+)=?([^&]*)/g.exec(qs); ) {
+	for (var m; m = qs && /([^&=]+)=?([^&]*)/g.exec(qs); ) {
 		if (m[1] == 'log') {return log[m[2].toUpperCase()] || Number(m[2]) || def;} 
 	}
 	return def;
