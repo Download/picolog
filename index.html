@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Picolog : Tiny logging helper for use in the browser">
+    <meta name="description" content="Picolog : Tiny logging helper for use in the browser, Node and Nashorn">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/Download/picolog">View on GitHub</a>
 
           <h1 id="project_title">Picolog</h1>
-          <h2 id="project_tagline">Tiny logging helper for use in the browser</h2>
+          <h2 id="project_tagline">Tiny logging helper for use in the browser, Node and Nashorn</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/Download/picolog/zipball/master">Download this project as a .zip file</a>
@@ -32,12 +32,12 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="picolog-v060" class="anchor" href="#picolog-v060" aria-hidden="true"><span class="octicon octicon-link"></span></a>picolog <sub><sup>v0.6.0</sup></sub>
+<a id="picolog-v070" class="anchor" href="#picolog-v070" aria-hidden="true"><span class="octicon octicon-link"></span></a>picolog <sub><sup>v0.7.0</sup></sub>
 </h1>
 
-<p><strong>Tiny logging helper for use in the browser</strong></p>
+<p><strong>Tiny logging helper for use in the browser, Node and Nashorn</strong></p>
 
-<p><img src="https://cdn.rawgit.com/download/picolog/0.6.0/picolog.png" alt="logo"></p>
+<p><img src="https://cdn.rawgit.com/Download/picolog/0.7.0/picolog.png" alt="logo"></p>
 
 <h2>
 <a id="yet-another-logging-library" class="anchor" href="#yet-another-logging-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet another logging library?</h2>
@@ -48,8 +48,8 @@
 without having to worry about environments where no <code>console</code> object is
 available. It just adds one feature: logging levels. </p>
 
-<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js">49 lines of code</a> 
-weigh in at <strong>just 837 bytes</strong> minified and gzipped, it allows you to keep your logging statements 
+<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js">49 lines of code</a> 
+weigh in at <strong>just 845 bytes</strong> minified and gzipped, it allows you to keep your logging statements 
 around in your production builds without having to worry about size/performance or polluting the 
 user's log with too many messages.</p>
 
@@ -58,11 +58,11 @@ user's log with too many messages.</p>
 
 <ul>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
+<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
 </ul>
 
 <h2>
@@ -84,7 +84,7 @@ user's log with too many messages.</p>
 
 <p>This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.</p>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h3>
 <a id="local-script-file" class="anchor" href="#local-script-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local script file</h3>
@@ -116,9 +116,30 @@ log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</s
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c1">require</span>.config({
     paths<span class="pl-k">:</span> {
-        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min<span class="pl-pds">'</span></span>
+        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min<span class="pl-pds">'</span></span>
     }
 });</pre></div>
+
+<h3>
+<a id="using-picolog-in-nashorn" class="anchor" href="#using-picolog-in-nashorn" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Picolog in Nashorn</h3>
+
+<p>Since Java 8, the JVM comes with a built-in Javascript interpreter called <a href="http://openjdk.java.net/projects/nashorn/">Nashorn</a>. 
+Nashorn does not as of yet support any module loaders, but you can load Picolog directly into the interpreter like this:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ScriptEngine</span> engine <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ScriptEngineManager</span>()<span class="pl-k">.</span>getEngineByName(<span class="pl-s"><span class="pl-pds">"</span>nashorn<span class="pl-pds">"</span></span>);
+<span class="pl-c">// Load picolog from classpath</span>
+<span class="pl-smi">ClassLoader</span> loader <span class="pl-k">=</span> <span class="pl-v">this</span><span class="pl-k">.</span>getClass()<span class="pl-k">.</span>getClassLoader();
+<span class="pl-smi">InputStream</span> resource <span class="pl-k">=</span> loader<span class="pl-k">.</span>getResourceAsStream(<span class="pl-s"><span class="pl-pds">"</span>my/pkg/picolog.min.js<span class="pl-pds">"</span></span>)
+<span class="pl-smi">InputStreamReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">InputStreamReader</span>(resource, <span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>);  
+<span class="pl-c">// Or, load picolog from the file system</span>
+<span class="pl-smi">FileReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">FileReader</span>(<span class="pl-s"><span class="pl-pds">"</span>/file/path/to/picolog.min.js<span class="pl-pds">"</span></span>); 
+<span class="pl-c">// Add it to the script engine</span>
+engine<span class="pl-k">.</span>eval(picolog);</pre></div>
+
+<p>You can use <code>ClassLoader.getResourceAsStream</code> to read the script file from your classpath. This allows you to bundle
+the script inside your JAR/WAR and read it directly from there using just the 'package' in which the script resides.
+Alternatively, you can use <code>new FileReader(path)</code>, where path is a filepath, absolute, or relative to the current
+directory.</p>
 
 <h2>
 <a id="logging-methods" class="anchor" href="#logging-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging methods</h2>
