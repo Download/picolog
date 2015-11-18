@@ -1,7 +1,7 @@
-# picolog <sub><sup>v0.6.0</sup></sub>
-**Tiny logging helper for use in the browser**
+# picolog <sub><sup>v0.7.0</sup></sub>
+**Tiny logging helper for use in the browser, Node and Nashorn**
 
-![logo](https://cdn.rawgit.com/download/picolog/0.6.0/picolog.png)
+![logo](https://cdn.rawgit.com/download/picolog/0.7.0/picolog.png)
 
 ## Yet another logging library?
 **No. Picolog is much less than that.**
@@ -10,15 +10,15 @@ All Picolog is, is a tiny shim that lets you safely log to the console
 without having to worry about environments where no `console` object is
 available. It just adds one feature: logging levels. 
 
-Because it uses native logging under the hood and it's [49 lines of code](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js) 
-weigh in at **just 837 bytes** minified and gzipped, it allows you to keep your logging statements 
+Because it uses native logging under the hood and it's [49 lines of code](https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js) 
+weigh in at **just 845 bytes** minified and gzipped, it allows you to keep your logging statements 
 around in your production builds without having to worry about size/performance or polluting the 
 user's log with too many messages.
 
 ## Download
-* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.umd.js) (~2kB, source)
-* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js) (~1kB, minified)
-* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js.map) (~2kB, debug map file)
+* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js) (~2kB, source)
+* [picolog.min.js](https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js) (~1kB, minified)
+* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js.map) (~2kB, debug map file)
 
 ## Install
 If you are using NPM, you can install picolog with this command:
@@ -33,7 +33,7 @@ By adding `--save`, we instruct NPM to add a dependency on the latest version of
 ### CDN
 This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.
 ```xml
-<script src="https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min.js"></script>
+<script src="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js"></script>
 ```
 
 ### Local script file
@@ -62,10 +62,25 @@ To be able to load Picolog from CDN as an AMD module, configure the CDN url like
 ```js
 require.config({
 	paths: {
-		'picolog': 'https://cdn.rawgit.com/download/picolog/0.6.0/dist/picolog.min'
+		'picolog': 'https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min'
 	}
 });
 ```
+
+### Using Picolog in Nashorn
+Since Java 8, the JVM comes with a built-in Javascript interpreter called [Nashorn](http://openjdk.java.net/projects/nashorn/). 
+Nashorn does not as of yet support any module loaders, but you can load Picolog directly into the interpreter like this:
+```java
+	ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+	ClassLoader loader = this.getClass().getClassLoader();
+	InputStreamReader picolog = new InputStreamReader(loader.getResourceAsStream("my/pkg/picolog.min.js"), "utf-8");  // OR
+	FileReader picolog = new FileReader("/file/path/to/picolog.min.js"); 
+	engine.eval(picolog);
+```
+You can use `ClassLoader.getResourceAsStream` to read the script file from your classpath. This allows you to bundle
+the script inside your JAR/WAR and read it directly from there using just the 'package' in which the script resides.
+Alternatively, you can use `new FileReader(path)`, where path is a filepath, absolute, or relative to the current
+directory.
 
 ## Logging methods
 Picolog defines 5 logging methods, which correspond with available log levels:
