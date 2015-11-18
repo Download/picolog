@@ -28,7 +28,7 @@ npm install --save picolog
 By adding `--save`, we instruct NPM to add a dependency on the latest version of picolog to your package.json file.
 
 ## Include on your page
-`picolog` can be used directly from CDN, from a local script file, or from a module loader.
+Picolog can be used directly from CDN, from a local script file, or from a module loader.
 
 ### CDN
 This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.
