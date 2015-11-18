@@ -72,9 +72,13 @@ Since Java 8, the JVM comes with a built-in Javascript interpreter called [Nasho
 Nashorn does not as of yet support any module loaders, but you can load Picolog directly into the interpreter like this:
 ```java
 	ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+	// Load picolog from classpath
 	ClassLoader loader = this.getClass().getClassLoader();
-	InputStreamReader picolog = new InputStreamReader(loader.getResourceAsStream("my/pkg/picolog.min.js"), "utf-8");  // OR
+	InputStream resource = loader.getResourceAsStream("my/pkg/picolog.min.js")
+	InputStreamReader picolog = new InputStreamReader(resource, "utf-8");  
+	// Or, load picolog from the file system
 	FileReader picolog = new FileReader("/file/path/to/picolog.min.js"); 
+	// Add it to the script engine
 	engine.eval(picolog);
 ```
 You can use `ClassLoader.getResourceAsStream` to read the script file from your classpath. This allows you to bundle
