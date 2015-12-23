@@ -14,8 +14,8 @@ module.exports = function(grunt) {
 			all: {
 				options: {
 					src: '<%= pkg.src %>',
-					dest: '<%= pkg.dist.umd %>', 
-					template: 'umd-lite.hbs', 
+					dest: '<%= pkg.dist.umd %>',
+					template: 'umd-lite.hbs',
 					objectToExport: '<%= pkg.exports[0] %>',
 					amdModuleId: '<%= pkg.name %>'
 				}
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options:{
-				banner : '/*! [<%= pkg.name %> <%= pkg.version %>](<%= pkg.homepage %>) <%= pkg.copyright %> License: [<%= pkg.license %>](<%= pkg.licenseUrl %>) */',
+				banner : '/*! [<%= pkg.name %> <%= pkg.version %>] CC-BY-4.0 */',
 				mangle: {
 					except: pkg.exports.concat(['u','m','d'])
 				},
@@ -48,14 +48,14 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('default', [
-		'jshint', 
-		'umd', 
+		'jshint',
+		'umd',
 	]);
 
 	grunt.registerTask('release', [
-		'jshint', 
-		'umd', 
-		'uglify', 
-		'jsdoc', 
+		'jshint',
+		'umd',
+		'uglify',
+		'jsdoc',
 	]);
 }

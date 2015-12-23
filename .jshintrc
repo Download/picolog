@@ -16,9 +16,9 @@
 	"browser": true,
 	"shadow": true,
 	"devel": true,
-	
 	"globals": {
 		"define": false,
-		"module": false
+		"module": false,
+		"process": false
 	}
 }

@@ -1,6 +1,6 @@
 {
   "name": "picolog",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Tiny logging helper for use in the browser, Node and Nashorn.",
   "src": "src/picolog.js",
   "main": "dist/picolog.umd.js",
@@ -46,7 +46,8 @@
     "grunt-contrib-uglify": "~0.6.0",
     "grunt-jsdoc": "~0.6.7",
     "grunt-umd": "^2.3.3",
-    "load-grunt-tasks": "~1.0.0"
+    "load-grunt-tasks": "~1.0.0",
+    "mocha": "^2.3.4"
   },
   "dependencies": {}
 }
