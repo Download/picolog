@@ -6,7 +6,8 @@ function test(ok, msg) {
 	failed = failed || !ok;
 }
 
-console.info('Testing picolog. process.env.NODE_ENV=' + process.env.NODE_ENV + ', process.env.PICOLOG_LEVEL=' + process.env.PICOLOG_LEVEL);
+console.log('Testing picolog. process.env.NODE_ENV=' + process.env.NODE_ENV + ', process.env.PICOLOG_LEVEL=' + process.env.PICOLOG_LEVEL);
+console.log('');
 test(typeof log == 'object', '`log` exists and is an object');
 test(log.picolog, '`log` has a property `picolog`');
 test(log.picolog.version, '`log.picolog` has a property `version`');
@@ -27,6 +28,7 @@ test(typeof log.assert == 'function', '`log.assert` is a function');
 test(typeof log.dir == 'function', '`log.dir` is a function');
 test(typeof log.time == 'function', '`log.time` is a function');
 test(typeof log.timeEnd == 'function', '`log.timeEnd` is a function');
+console.log('');
 log.error('Current log level is set to ' + log.level)
 log.error('error message');
 log.warn('warn message');
@@ -36,12 +38,13 @@ log.debug('debug message');
 log.trace('trace message');
 log.assert(false, 'Prints this error message, unless log level is set to 0 (NONE) or NODE_ENV is set to \'production\'.');
 log.assert(true, 'This should NOT print an error message.');
+console.log('');
 
 if (failed) {
-	test(failed, 'Some tests FAILED.');
+	test(false, 'Some tests FAILED.');
 	process.exit(1);
 }
 else {
-	test(!failed, 'All tests OK!');
+	test(true, 'All tests OK!');
 	process.exit(0);
 }

@@ -22,7 +22,9 @@
   "keywords": [
     "javascript",
     "logging",
-    "browser"
+    "browser",
+    "node",
+    "nashorn"
   ],
   "author": {
     "name": "Stijn de Witt",
