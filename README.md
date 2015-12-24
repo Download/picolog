@@ -163,13 +163,13 @@ console.info('Nashorn can do logging to!');
 ```
 
 ## Performance considerations
-The logging methods on the `log` object that correspond to a log level which is lower than the
+The logging methods on the `log` object that correspond to a log level which is higher than the
 currently set level, are replaced by no-op methods. As such, you generally don't have to worry
 about the performance overhead of leaving the log statements in the production code. There is
 one exception to this rule though. If preparing the message itself is a costly operation, you
-may want to surround the log code with an `if (log.level <= myLevel)` statement:
+may want to surround the log code with an `if (log.level >= myLevel)` statement:
 ```js
-if (log.level <= log.INFO) {
+if (log.level >= log.INFO) {
 	var message = doLotsOfWorkToGenerateLogMessage();
 	log.info(message);
 }
