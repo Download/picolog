@@ -11,7 +11,7 @@ without having to worry about environments where no `console` object is
 available. It just adds one feature: logging levels.
 
 Because it uses native logging under the hood and it's [48 lines of code](https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.umd.js)
-weigh in at **just 952 bytes** minified and zipped, it allows you to keep your logging statements
+weigh in at **just 951 bytes** minified and zipped, it allows you to keep your logging statements
 around in your production builds without having to worry about size/performance or polluting the
 user's log with too many messages.
 
