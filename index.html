@@ -32,41 +32,41 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="picolog-v070" class="anchor" href="#picolog-v070" aria-hidden="true"><span class="octicon octicon-link"></span></a>picolog <sub><sup>v0.7.0</sup></sub>
+<a id="picolog-v101" class="anchor" href="#picolog-v101" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>picolog <sub><sup>v1.0.1</sup></sub>
 </h1>
 
 <p><strong>Tiny logging helper for use in the browser, Node and Nashorn</strong></p>
 
-<p><img src="https://cdn.rawgit.com/Download/picolog/0.7.0/picolog.png" alt="logo"></p>
+<p><img src="https://cdn.rawgit.com/download/picolog/1.0.0/picolog.png" alt="logo"></p>
 
 <h2>
-<a id="yet-another-logging-library" class="anchor" href="#yet-another-logging-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yet another logging library?</h2>
+<a id="yet-another-logging-library" class="anchor" href="#yet-another-logging-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yet another logging library?</h2>
 
 <p><strong>No. Picolog is much less than that.</strong></p>
 
 <p>All Picolog is, is a tiny shim that lets you safely log to the console
 without having to worry about environments where no <code>console</code> object is
-available. It just adds one feature: logging levels. </p>
+available. It just adds one feature: logging levels.</p>
 
-<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js">49 lines of code</a> 
-weigh in at <strong>just 845 bytes</strong> minified and gzipped, it allows you to keep your logging statements 
-around in your production builds without having to worry about size/performance or polluting the 
+<p>Because it uses native logging under the hood and it's <a href="https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.umd.js">48 lines of code</a>
+weigh in at <strong>just 939 bytes</strong> minified and zipped, it allows you to keep your logging statements
+around in your production builds without having to worry about size/performance or polluting the
 user's log with too many messages.</p>
 
 <h2>
-<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download</h2>
 
 <ul>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
+<a href="https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.umd.js">picolog.umd.js</a> (~2kB, source)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
+<a href="https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.min.js">picolog.min.js</a> (~1kB, minified)</li>
 <li>
-<a href="https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
+<a href="https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.min.js.map">picolog.min.js.map</a> (~2kB, debug map file)</li>
 </ul>
 
 <h2>
-<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 
 <p>If you are using NPM, you can install picolog with this command:</p>
 
@@ -75,64 +75,81 @@ user's log with too many messages.</p>
 <p>By adding <code>--save</code>, we instruct NPM to add a dependency on the latest version of picolog to your package.json file.</p>
 
 <h2>
-<a id="include-on-your-page" class="anchor" href="#include-on-your-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Include on your page</h2>
+<a id="include-on-your-page" class="anchor" href="#include-on-your-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Include on your page</h2>
 
-<p><code>picolog</code> can be used directly from CDN, from a local script file, or from a module loader.</p>
+<p>Picolog can be used directly from CDN, from a local script file, or from a module loader.</p>
 
 <h3>
-<a id="cdn" class="anchor" href="#cdn" aria-hidden="true"><span class="octicon octicon-link"></span></a>CDN</h3>
+<a id="cdn" class="anchor" href="#cdn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CDN</h3>
 
 <p>This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.</p>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h3>
-<a id="local-script-file" class="anchor" href="#local-script-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local script file</h3>
+<a id="local-script-file" class="anchor" href="#local-script-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Local script file</h3>
 
 <p>Download picolog.min.js, place it in a folder <code>lib</code> on your website and include it like this:</p>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>lib/picolog.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h3>
-<a id="module-loaders" class="anchor" href="#module-loaders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Module loaders</h3>
+<a id="module-loaders" class="anchor" href="#module-loaders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module loaders</h3>
 
 <p>Picolog implements the Universal Module Pattern and as such, is available to be consumed
-from Node modules as well as via an AMD loader such as RequireJS. </p>
+from Node modules as well as via an AMD loader such as RequireJS.</p>
 
 <h4>
-<a id="node" class="anchor" href="#node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node</h4>
+<a id="node" class="anchor" href="#node" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node</h4>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> log <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>Picolog is loaded<span class="pl-pds">'</span></span>);</pre></div>
+<span class="pl-smi">log</span>.<span class="pl-en">info</span>(<span class="pl-s"><span class="pl-pds">'</span>Picolog is loaded<span class="pl-pds">'</span></span>);</pre></div>
 
 <h4>
-<a id="amd" class="anchor" href="#amd" aria-hidden="true"><span class="octicon octicon-link"></span></a>AMD</h4>
+<a id="amd" class="anchor" href="#amd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AMD</h4>
 
-<div class="highlight highlight-source-js"><pre>define([<span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span>], <span class="pl-k">function</span>(<span class="pl-smi">log</span>){
-    log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>Picolog is loaded<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-en">define</span>([<span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span>], <span class="pl-k">function</span>(<span class="pl-smi">log</span>){
+    <span class="pl-smi">log</span>.<span class="pl-en">info</span>(<span class="pl-s"><span class="pl-pds">'</span>Picolog is loaded<span class="pl-pds">'</span></span>);
 });</pre></div>
 
 <p>To be able to load Picolog from CDN as an AMD module, configure the CDN url like so (note the absence of <code>.js</code> in the url):</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-c1">require</span>.config({
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">require</span>.<span class="pl-en">config</span>({
     paths<span class="pl-k">:</span> {
-        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/0.7.0/dist/picolog.min<span class="pl-pds">'</span></span>
+        <span class="pl-s"><span class="pl-pds">'</span>picolog<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://cdn.rawgit.com/download/picolog/1.0.1/dist/picolog.min<span class="pl-pds">'</span></span>
     }
 });</pre></div>
 
 <h3>
-<a id="using-picolog-in-nashorn" class="anchor" href="#using-picolog-in-nashorn" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Picolog in Nashorn</h3>
+<a id="using-picolog-as-a-console-replacement" class="anchor" href="#using-picolog-as-a-console-replacement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Picolog as a console replacement</h3>
 
-<p>Since Java 8, the JVM comes with a built-in Javascript interpreter called <a href="http://openjdk.java.net/projects/nashorn/">Nashorn</a>. 
+<p>Sometimes scripts beyond your control are logging to the console and you wish you could influence
+their output. In environments where you are allowed to replace the console, picolog can be a solution:</p>
+
+<pre><code>// assuming `log` is the picolog object
+var orgConsole;
+if (typeof console == 'object') {
+    orgConsole = console; // hang on to original
+    console = log;
+    if (console !== log) {
+        log.log('Replacing the console is not allowed in this environment');
+    }
+}
+</code></pre>
+
+<h3>
+<a id="using-picolog-in-nashorn" class="anchor" href="#using-picolog-in-nashorn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Picolog in Nashorn</h3>
+
+<p>Since Java 8, the JVM comes with a built-in Javascript interpreter called <a href="http://openjdk.java.net/projects/nashorn/">Nashorn</a>.
 Nashorn does not as of yet support any module loaders, but you can load Picolog directly into the interpreter like this:</p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-smi">ScriptEngine</span> engine <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ScriptEngineManager</span>()<span class="pl-k">.</span>getEngineByName(<span class="pl-s"><span class="pl-pds">"</span>nashorn<span class="pl-pds">"</span></span>);
 <span class="pl-c">// Load picolog from classpath</span>
 <span class="pl-smi">ClassLoader</span> loader <span class="pl-k">=</span> <span class="pl-v">this</span><span class="pl-k">.</span>getClass()<span class="pl-k">.</span>getClassLoader();
 <span class="pl-smi">InputStream</span> resource <span class="pl-k">=</span> loader<span class="pl-k">.</span>getResourceAsStream(<span class="pl-s"><span class="pl-pds">"</span>my/pkg/picolog.min.js<span class="pl-pds">"</span></span>)
-<span class="pl-smi">InputStreamReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">InputStreamReader</span>(resource, <span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>);  
+<span class="pl-smi">InputStreamReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">InputStreamReader</span>(resource, <span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>);
 <span class="pl-c">// Or, load picolog from the file system</span>
-<span class="pl-smi">FileReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">FileReader</span>(<span class="pl-s"><span class="pl-pds">"</span>/file/path/to/picolog.min.js<span class="pl-pds">"</span></span>); 
+<span class="pl-smi">FileReader</span> picolog <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">FileReader</span>(<span class="pl-s"><span class="pl-pds">"</span>/file/path/to/picolog.min.js<span class="pl-pds">"</span></span>);
 <span class="pl-c">// Add it to the script engine</span>
 engine<span class="pl-k">.</span>eval(picolog);</pre></div>
 
@@ -142,49 +159,50 @@ Alternatively, you can use <code>new FileReader(path)</code>, where path is a fi
 directory.</p>
 
 <h2>
-<a id="logging-methods" class="anchor" href="#logging-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging methods</h2>
+<a id="logging-methods" class="anchor" href="#logging-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logging methods</h2>
 
-<p>Picolog defines 5 logging methods, which correspond with available log levels:</p>
+<p>Picolog defines 6 logging methods, which correspond with available log levels:</p>
 
-<div class="highlight highlight-source-js"><pre>log.trace(<span class="pl-s"><span class="pl-pds">'</span>This logs a TRACE message<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">debug</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a DEBUG message<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs an INFO message<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">warn</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a WARN message<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">error</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs an ERROR message<span class="pl-pds">'</span></span>);</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">log</span>.<span class="pl-en">error</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs an ERROR message<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-en">warn</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a WARN message<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-en">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs an INFO message<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a LOG message<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-en">debug</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a DEBUG message<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-en">trace</span>(<span class="pl-s"><span class="pl-pds">'</span>This logs a TRACE message<span class="pl-pds">'</span></span>);</pre></div>
 
-<p>Picolog does <strong>not</strong> mess with your stacktrace or line numbers. Line numbers shown in the console 
+<p>Picolog does <strong>not</strong> mess with your stacktrace or line numbers. Line numbers shown in the console
 will be from your code, not from some wrapper function..</p>
 
 <h2>
-<a id="logging-levels" class="anchor" href="#logging-levels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logging levels</h2>
+<a id="logging-levels" class="anchor" href="#logging-levels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logging levels</h2>
 
-<p>Picolog defines 5 logging levels, which correspond with the available logging methods:</p>
+<p>Picolog defines 6 logging levels, which correspond with the available logging methods:</p>
 
-<div class="highlight highlight-source-js"><pre>log.TRACE; <span class="pl-c">// 1</span>
-log.DEBUG; <span class="pl-c">// 2</span>
-log.INFO; <span class="pl-c">// 3</span>
-log.WARN; <span class="pl-c">// 4</span>
-log.ERROR; <span class="pl-c">// 5</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">log</span>.<span class="pl-c1">ERROR</span>; <span class="pl-c">// 1</span>
+<span class="pl-smi">log</span>.<span class="pl-c1">WARN</span>;  <span class="pl-c">// 2</span>
+<span class="pl-smi">log</span>.<span class="pl-c1">INFO</span>;  <span class="pl-c">// 3</span>
+<span class="pl-smi">log</span>.<span class="pl-c1">LOG</span>;   <span class="pl-c">// 4</span>
+<span class="pl-smi">log</span>.<span class="pl-c1">DEBUG</span>; <span class="pl-c">// 5</span>
+<span class="pl-smi">log</span>.<span class="pl-c1">TRACE</span>; <span class="pl-c">// 6</span></pre></div>
 
-<p>In addition, there is a 6th level that completely disables all logging:</p>
+<p>In addition, there is a 7th level that completely disables all logging:</p>
 
-<div class="highlight highlight-source-js"><pre>log.NONE; <span class="pl-c">// 9</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">log</span>.<span class="pl-c1">NONE</span>;  <span class="pl-c">// 0</span></pre></div>
 
 <p>To get or set the log level, we use the <code>log.level</code> property:</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (log.level <span class="pl-k">&lt;=</span> log.INFO) {
-    log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This message will be logged<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (<span class="pl-smi">log</span>.<span class="pl-smi">level</span> <span class="pl-k">&gt;=</span> <span class="pl-smi">log</span>.<span class="pl-c1">INFO</span>) {
+    <span class="pl-smi">log</span>.<span class="pl-en">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This message will be logged<span class="pl-pds">'</span></span>);
 }
-log.level <span class="pl-k">=</span> log.WARN;
-log.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This info message will NOT be logged.<span class="pl-pds">'</span></span>);
-log.<span class="pl-c1">warn</span>(<span class="pl-s"><span class="pl-pds">'</span>This warning message WILL be logged.<span class="pl-pds">'</span></span>);
-log.level <span class="pl-k">=</span> log.NONE;
-log.<span class="pl-c1">error</span>(<span class="pl-s"><span class="pl-pds">'</span>Logging is completely disabled.<span class="pl-pds">'</span></span>);</pre></div>
+<span class="pl-smi">log</span>.<span class="pl-smi">level</span> <span class="pl-k">=</span> <span class="pl-smi">log</span>.<span class="pl-c1">WARN</span>;
+<span class="pl-smi">log</span>.<span class="pl-en">info</span>(<span class="pl-s"><span class="pl-pds">'</span>This info message will NOT be logged.<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-en">warn</span>(<span class="pl-s"><span class="pl-pds">'</span>This warning message WILL be logged.<span class="pl-pds">'</span></span>);
+<span class="pl-smi">log</span>.<span class="pl-smi">level</span> <span class="pl-k">=</span> <span class="pl-smi">log</span>.<span class="pl-c1">NONE</span>;
+<span class="pl-smi">log</span>.<span class="pl-en">error</span>(<span class="pl-s"><span class="pl-pds">'</span>Logging is completely disabled.<span class="pl-pds">'</span></span>);</pre></div>
 
 <p>By default, the log level is set to <code>log.WARN</code> so under normal conditions there will be no logging.</p>
 
-<p>To change the log level on the page we are looking at we can do
-two things:</p>
+<p>To change the log level on a web page we are looking at we can do two things:</p>
 
 <ol>
 <li>Open the console and manually set the log level from there</li>
@@ -203,27 +221,47 @@ named <code>log</code>, like this:</p>
 <p>Both the uppercase and lowercase names of the log levels work,
 as well as their numerical value.</p>
 
+<p>When using picolog on Node JS, we can set an environment variable <code>PICOLOG_LEVEL</code> and it
+will be picked up by picolog when it loads:</p>
+
+<div class="highlight highlight-source-shell"><pre>C:<span class="pl-cce">\w</span>s<span class="pl-cce">\p</span>icolog<span class="pl-k">&gt;</span><span class="pl-c1">set</span> PICOLOG_LEVEL=debug
+
+C:<span class="pl-cce">\w</span>s<span class="pl-cce">\p</span>icolog<span class="pl-k">&gt;</span>node tests/test-env.js
+Testing picolog. process.env.PICOLOG_LEVEL=debug
+ v  <span class="pl-s"><span class="pl-pds">`</span>log.level<span class="pl-pds">`</span></span> is <span class="pl-c1">set</span> to <span class="pl-s"><span class="pl-pds">`</span>log.DEBUG<span class="pl-pds">`</span></span>
+ v  All tests OK<span class="pl-k">!</span></pre></div>
+
 <h2>
-<a id="performance-considerations" class="anchor" href="#performance-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance considerations</h2>
+<a id="using-picolog-as-a-polyfill" class="anchor" href="#using-picolog-as-a-polyfill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using picolog as a polyfill</h2>
 
-<p>The logging methods on the <code>log</code> object that correspond to a log level which is lower than the 
-currently set level, are replaced by no-op methods. As such, you generally don't have to worry 
-about the performance overhead of leaving the log statements in the production code. There is 
-one exception to this rule though. If preparing the message itself is a costly operation, you 
-may want to surround the log code with an <code>if (log.level &lt;= myLevel)</code> statement:</p>
+<p>As of version 1.0.0, picolog supports all functions in the <a href="https://nodejs.org/api/console.html">NodeJS Console API</a>,
+so you should be able to use it as a polyfill in environments where there is no <code>console</code> available (e.g. Nashorn):</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (log.level <span class="pl-k">&lt;=</span> log.INFO) {
-    <span class="pl-k">var</span> message <span class="pl-k">=</span> doLotsOfWorkToGenerateLogMessage();
-    log.<span class="pl-c1">info</span>(message);
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// assuming you already made sure there is a `global` object</span>
+<span class="pl-c1">global</span>.<span class="pl-smi">console</span> <span class="pl-k">=</span> log;
+<span class="pl-en">console</span>.<span class="pl-c1">info</span>(<span class="pl-s"><span class="pl-pds">'</span>Nashorn can do logging to!<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="performance-considerations" class="anchor" href="#performance-considerations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Performance considerations</h2>
+
+<p>The logging methods on the <code>log</code> object that correspond to a log level which is higher than the
+currently set level, are replaced by no-op methods. As such, you generally don't have to worry
+about the performance overhead of leaving the log statements in the production code. There is
+one exception to this rule though. If preparing the message itself is a costly operation, you
+may want to surround the log code with an <code>if (log.level &gt;= myLevel)</code> statement:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">if</span> (<span class="pl-smi">log</span>.<span class="pl-smi">level</span> <span class="pl-k">&gt;=</span> <span class="pl-smi">log</span>.<span class="pl-c1">INFO</span>) {
+    <span class="pl-k">var</span> message <span class="pl-k">=</span> <span class="pl-en">doLotsOfWorkToGenerateLogMessage</span>();
+    <span class="pl-smi">log</span>.<span class="pl-en">info</span>(message);
 }</pre></div>
 
 <h2>
-<a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copyright</h2>
+<a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright</h2>
 
 <p>Copyright 2015 by <a href="http://StijnDeWitt.com">Stijn de Witt</a>. Some rights reserved.</p>
 
 <h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>Licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC-BY-4.0)</a> Open Source license.</p>
       </section>
