@@ -1,6 +1,6 @@
 {
   "name": "picolog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tiny logging helper for use in the browser, Node and Nashorn.",
   "src": "src/picolog.js",
   "main": "dist/picolog.umd.js",
