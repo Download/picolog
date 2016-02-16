@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>picolog tests</title>
+	<title>Picolog as AMD module</title>
 	<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.14.0.css">
 	<script src="http://code.jquery.com/qunit/qunit-1.14.0.js"></script>
 	<script src="../dist/picolog.umd.js"></script>
-	<script src="test-qs.js"></script>
+	<script src="test-console-replacement.js"></script>
 </head>
 <body>
 	<a href="index.html">Basics</a> |
@@ -15,18 +15,11 @@
 			<a href="test-qs.html?log=none">log=none</a> |
 			<a href="test-amd.html">AMD</a> |
 			<a href="test-console-replacement.html">console replacement</a>
-	<h1>Log level from parameter</h1>
-	<a href="test-qs.js">view test code</a>
-	<p>Please open the debug console and check whether the following
-	messages are logged or not:</p>
-	<ul>
-		<li>TRACE message</li>
-		<li>DEBUG message</li>
-		<li>INFO message</li>
-		<li>WARN message</li>
-		<li>ERROR message</li>
-	</ul>
+	<h1>Picolog as console replacement</h1>
+	<a href="test-console-replacement.js">Test code</a>
 	<div id="qunit"></div>
 	<div id="qunit-fixture"></div>
 </body>
 </html>
+
+
