@@ -35,16 +35,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		jsdoc : {
-			dist : {
-				src: ['src/*.js', 'test/*.js'],
-				options: {
-					destination: 'doc',
-					template : "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template",
-					configure: "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json"
-				}
-			}
-		},
 	});
 
 	grunt.registerTask('default', [
@@ -56,6 +46,5 @@ module.exports = function(grunt) {
 		'jshint',
 		'umd',
 		'uglify',
-		'jsdoc',
 	]);
 }

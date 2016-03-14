@@ -10,7 +10,7 @@ var log = {NONE:0, ERROR:1, WARN:2, INFO:3, LOG:4, DEBUG:5, TRACE:6},
 	level = typeof q == 'number' ? q : (typeof env == 'number' ? env : log.WARN),
 	names=k.slice(1, k.length).map(function(x){return x.toLowerCase();});
 
-Object.defineProperty(log, 'picolog', {configurable:false, enumerable:false, value:{version:'1.0.3'}});
+Object.defineProperty(log, 'picolog', {configurable:false, enumerable:false, value:{version:'1.0.4'}});
 
 Object.defineProperty(log, 'level', {
 	get: function(){return level;},
@@ -37,9 +37,9 @@ function con(){return typeof console=='object' && console;}
 function prn(){return typeof print == 'function' && print;}
 function lvl(n){return n && (Number(n)!==Number(n) ? log[n.toUpperCase()] : Number(n));}
 function qry(){
-	var m, qs = typeof window=='object' && window.location.search.substring(1);
-	for (; (m = qs && /([^&=]+)=?([^&]*)/g.exec(qs)) ;) {
-		if (m[1] == 'log') {return lvl(m[2]);}
+	var i, m, qs = typeof window=='object' && window.location.search.substring(1), args = qs && qs.split('&');
+	for (i=0; m=args && args[i] && args[i].split('='); i++) {
+		if (m[0] == 'log') {return lvl(m[1]);}
 	}
 }
 

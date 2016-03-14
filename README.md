@@ -1,4 +1,4 @@
-# picolog <sub><sup>v1.0.3</sup></sub>
+# picolog <sub><sup>v1.0.4</sup></sub>
 **Tiny logging helper for use in the browser, Node and Nashorn**
 
 ![logo](https://cdn.rawgit.com/download/picolog/1.0.0/picolog.png)
@@ -10,15 +10,15 @@ All Picolog is, is a tiny shim that lets you safely log to the console
 without having to worry about environments where no `console` object is
 available. It just adds one feature: logging levels.
 
-Because it uses native logging under the hood and it's [48 lines of code](https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.umd.js)
+Because it uses native logging under the hood and it's [48 lines of code](https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.umd.js)
 weigh in at **just 945 bytes** minified and zipped, it allows you to keep your logging statements
 around in your production builds without having to worry about size/performance or polluting the
 user's log with too many messages.
 
 ## Download
-* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.umd.js) (~2kB, source)
-* [picolog.min.js](https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.min.js) (~1kB, minified)
-* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.min.js.map) (~2kB, debug map file)
+* [picolog.umd.js](https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.umd.js) (~2kB, source)
+* [picolog.min.js](https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.min.js) (~1kB, minified)
+* [picolog.min.js.map](https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.min.js.map) (~2kB, debug map file)
 
 ## Install
 If you are using NPM, you can install picolog with this command:
@@ -33,7 +33,7 @@ Picolog can be used directly from CDN, from a local script file, or from a modul
 ### CDN
 This is by far the easiest method and gives good performance to boost. Use this if you are in doubt.
 ```xml
-<script src="https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.min.js"></script>
+<script src="https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.min.js"></script>
 ```
 
 ### Local script file
@@ -62,7 +62,7 @@ To be able to load Picolog from CDN as an AMD module, configure the CDN url like
 ```js
 require.config({
 	paths: {
-		'picolog': 'https://cdn.rawgit.com/download/picolog/1.0.3/dist/picolog.min'
+		'picolog': 'https://cdn.rawgit.com/download/picolog/1.0.4/dist/picolog.min'
 	}
 });
 ```
