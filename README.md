@@ -1,4 +1,6 @@
 # picolog <sub><sup>v1.0.4</sup></sub>
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Download/picolog.svg)](https://greenkeeper.io/)
 **Tiny logging helper for use in the browser, Node and Nashorn**
 
 ![logo](https://cdn.rawgit.com/download/picolog/1.0.0/picolog.png)
